@@ -80,7 +80,7 @@ export default function App() {
   ];
 
   const renderContent = () => {
-    if (route === "overview") return <Overview profile={profile} caseFiles={caseFiles} onOpenCase={openCase} onWork={() => navigate("work")} onNotice={notify} />;
+    if (route === "overview") return <Overview caseFiles={caseFiles} onOpenCase={openCase} onWork={() => navigate("work")} />;
     if (route === "work") return <WorkView caseFiles={caseFiles} onOpenCase={openCase} />;
     if (route === "playground") return <Playground onNotice={notify} />;
     if (route === "system") return <DesignSystem accent={accent} onAccentChange={setAccent} />;
@@ -93,7 +93,7 @@ export default function App() {
 
   return (
     <div className="app-shell" style={{ "--accent": accent }}>
-      <Sidebar active={activeNav} onNavigate={navigate} onCommand={() => setPaletteOpen(true)} name={profile.name} />
+      <Sidebar active={activeNav} onNavigate={navigate} onCommand={() => setPaletteOpen(true)} name={profile.name} caseCount={caseFiles.length} />
       <div className="workspace-column">
         <Topbar title={titles[route] || "Case file"} route={route} onRecruiter={() => navigate(route === "recruiter" ? "overview" : "recruiter")} onCommand={() => setPaletteOpen(true)} recruiterActive={route === "recruiter"} />
         <main className="workspace-main" id="main-content" key={route}>{renderContent()}</main>

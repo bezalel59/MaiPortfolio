@@ -1,9 +1,9 @@
 export const profile = {
   name: "Mai",
-  title: "Digital product designer",
-  statement: "I design interfaces that make complex things feel simple.",
+  title: "Designer",
+  statement: "Selected work by Mai.",
   status: "Portfolio in progress",
-  disciplines: ["UI / UX", "Interaction", "Product", "Frontend"],
+  disciplines: ["Brand identity", "Visual design", "Art direction"],
   explorations: [],
   tools: [],
   bio: "",
@@ -16,34 +16,25 @@ export const profile = {
   },
 };
 
-const storySections = [
-  ["problem", "The problem", "Add the problem this project addresses, and who experiences it."],
-  ["approach", "The approach", "Describe the approach and the constraints that shaped the work."],
-  ["research", "Research", "Add research notes, observations, or clearly labeled assumptions."],
-  ["ideation", "Ideation", "Show the directions explored and why some were set aside."],
-  ["wireframes", "Wireframes", "Add early flows, sketches, or low-fidelity screens."],
-  ["system", "Design system", "Document the type, color, components, and rules used here."],
-  ["interaction", "Interaction", "Describe the key states, transitions, and feedback."],
-  ["decisions", "Design decisions", "Explain why a key design decision improves the experience."],
-  ["final", "Final interface", "Add final screens and explain how they answer the original need."],
-  ["result", "Result", "Add a verified outcome when one is available. Do not estimate or invent metrics."],
-];
-
-export const caseFiles = ["001", "002", "003"].map((id) => ({
-  id,
-  title: "PROJECT TITLE",
-  description: "Replace with one clear sentence about the project and the people it serves.",
-  role: "UI / UX / PRODUCT",
-  year: "ADD YEAR",
-  state: "Draft",
-  sections: storySections.map(([key, title, placeholder]) => ({ key, title, placeholder })),
-  decision: {
-    problem: "The primary action needs clearer hierarchy.",
-    choice: "Reduce competing signals and make the next step explicit.",
-    before: "BEFORE",
-    after: "AFTER",
+export const caseFiles = [
+  {
+    id: "001",
+    title: "Mamali — Brand Identity",
+    description: "Brand identity for an organic maternity-fashion label.",
+    role: "BRAND IDENTITY",
+    context: "ACADEMIC PROJECT",
+    state: "Selected",
+    behanceUrl: "https://www.behance.net/gallery/242117139/Mamali-Brand-Identity",
+    gallery: [
+      { src: "./projects/mamali/01-identity-system.webp", width: 1200, height: 1193, alt: "Mamali identity introduction with textile production, organic cotton, and skin-comfort imagery" },
+      { src: "./projects/mamali/02-brand-applications.webp", width: 1200, height: 966, alt: "Mamali color palette, typefaces, and Hebrew logo variations" },
+      { src: "./projects/mamali/03-social-campaign.webp", width: 1200, height: 2576, alt: "Mamali graphic language with maternity photography, leaf patterns, product icons, tags, and postcards" },
+      { src: "./projects/mamali/04-digital-campaign.webp", width: 1200, height: 684, alt: "Mamali Instagram story, feed advertisement, and social profile mockups" },
+      { src: "./projects/mamali/05-poster-and-packaging.webp", width: 1200, height: 2067, alt: "Mamali outdoor poster, branded delivery vehicle, and packaging applications" },
+      { src: "./projects/mamali/06-brand-editorial.webp", width: 1200, height: 900, alt: "Mamali reusable bottle with the green Hebrew wordmark" },
+    ],
+    links: { figma: "", prototype: "", github: "" },
   },
-  links: { figma: "", prototype: "", github: "" },
-}));
+];
 
 export const playgroundStages = ["Default", "Hover", "Pressed", "Loading", "Success"];

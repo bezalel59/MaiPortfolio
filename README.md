@@ -20,6 +20,6 @@ The production site is written to `dist/`. Vite uses relative asset paths, so th
 
 ## Edit portfolio content
 
-Update the `profile` object and `caseFiles` array in `src/data/portfolio.js`. Each case file contains the ten story sections and optional Figma, prototype, and GitHub URLs. Empty links stay visibly marked as placeholders in the interface.
+Update the `profile` object and `caseFiles` array in `src/data/portfolio.js`. Image case files use a `gallery` array; keep artwork in `public/projects/` and add each image's relative path and descriptive alt text there.
 
-The case files currently contain draft placeholders only. Replace them with verified project details before publishing.
+The Mamali project currently contains six locally stored image boards from the linked Behance project. Add future projects to the same `caseFiles` array.

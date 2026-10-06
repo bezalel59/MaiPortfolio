@@ -16,7 +16,7 @@ const sections = [
   { id: "about", label: "Profile", Icon: CircleUserRound },
 ];
 
-export function Sidebar({ active, onNavigate, onCommand, name }) {
+export function Sidebar({ active, onNavigate, onCommand, name, caseCount }) {
   return (
     <aside className="sidebar">
       <a className="brand" href="#overview" onClick={(event) => { event.preventDefault(); onNavigate("overview"); }}>
@@ -30,7 +30,7 @@ export function Sidebar({ active, onNavigate, onCommand, name }) {
           <button className={`nav-item${active === id ? " is-active" : ""}`} key={id} onClick={() => onNavigate(id)} aria-current={active === id ? "page" : undefined}>
             <Icon size={16} strokeWidth={1.8} aria-hidden="true" />
             <span>{label}</span>
-            {id === "work" && <span className="nav-count">03</span>}
+            {id === "work" && <span className="nav-count">{String(caseCount).padStart(2, "0")}</span>}
           </button>
         ))}
       </nav>
