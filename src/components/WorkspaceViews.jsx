@@ -14,7 +14,7 @@ export function CaseRow({ project, onOpen }) {
     <button className="case-row" onClick={onOpen}>
       <span className="case-row-id">CASE<br /><strong>{project.id}</strong></span>
       {project.gallery?.length > 0 && <img className="case-row-thumb" src={(project.gallery[3] || project.gallery[0]).src} alt="" loading="eager" />}
-      <span className="case-row-main"><span className="case-row-title">{project.title}<span className={`draft-tag${project.state === "Selected" ? " is-selected" : ""}`}><i />{project.state}</span></span><span className="case-row-description">{project.description}</span></span>
+      <span className="case-row-main"><span className="case-row-title"><span dir="auto">{project.title}</span><span className={`draft-tag${project.state === "Selected" ? " is-selected" : ""}`}><i />{project.state}</span></span><span className="case-row-description">{project.description}</span></span>
       <span className="case-row-meta"><span>{project.role}</span><span>{project.context || project.year}</span></span>
       <span className="case-row-action" aria-hidden="true"><ArrowRight size={17} /></span>
     </button>
@@ -26,7 +26,7 @@ function ProjectArtwork({ project, onPointerMove, onOpen }) {
     <div className="project-artwork" onPointerMove={onPointerMove}>
       <div className="artwork-topline"><span>CASE {project.id} / {project.role}</span><span>01 / {String(project.gallery.length).padStart(2, "0")}</span></div>
       <button className="artwork-preview" onClick={onOpen} aria-label={`Open image collection for ${project.title}`}>
-        <img src={project.gallery[1].src} alt={project.gallery[1].alt} fetchPriority="high" />
+        <img src={project.gallery[3].src} alt={project.gallery[3].alt} fetchPriority="high" />
         <span className="artwork-open">VIEW THE WORK <ArrowRight size={13} /></span>
       </button>
       <div className="artwork-caption"><span>{project.title}</span><span>{project.context}</span></div>
