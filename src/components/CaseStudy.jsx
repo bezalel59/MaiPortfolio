@@ -8,7 +8,7 @@ function ImageGallery({ project, onBack }) {
         <div className="case-kicker"><span>CASE {project.id}</span><span>{project.context}</span></div>
         <h1>{project.title}</h1>
         <p className="case-description">{project.description}</p>
-        <a className="behance-link" href={project.behanceUrl} target="_blank" rel="noreferrer">View on Behance <ArrowUpRight size={14} aria-hidden="true" /></a>
+        <a className="behance-link" href={project.behanceUrl || project.prototypeUrl} target="_blank" rel="noreferrer">{project.behanceUrl ? "View on Behance" : "Open Figma prototype"} <ArrowUpRight size={14} aria-hidden="true" /></a>
       </header>
       <div className="artwork-gallery" aria-label={`${project.title} image collection`}>
         {project.gallery.map((image, index) => (

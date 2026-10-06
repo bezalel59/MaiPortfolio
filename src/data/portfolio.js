@@ -35,6 +35,19 @@ export const caseFiles = [
     ],
     links: { figma: "", prototype: "", github: "" },
   },
+  {
+    id: "002",
+    title: "First Investment — UX/UI",
+    description: "A Hebrew-language app case study exploring how to make a first investment feel clearer and more approachable.",
+    role: "UX / UI DESIGN",
+    context: "APP CASE STUDY",
+    state: "Prototype",
+    prototypeUrl: "https://www.figma.com/proto/wh8hcZPWrB56AioWR0gBi0/%D7%93%D7%99%D7%95%D7%9B%D7%90%D7%9F---%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%94?node-id=6727-7145&t=MkzgtvCyLaFqQLXV-1",
+    gallery: [
+      { src: "./projects/diyukan/01-ar-try-on.png", width: 450, height: 520, alt: "Augmented-reality jewelry try-on screen from a Hebrew UX/UI investment app case study" },
+    ],
+    links: { figma: "", prototype: "", github: "" },
+  },
 ];
 
 export const playgroundStages = ["Default", "Hover", "Pressed", "Loading", "Success"];

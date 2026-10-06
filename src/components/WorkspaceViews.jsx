@@ -13,7 +13,7 @@ export function CaseRow({ project, onOpen }) {
   return (
     <button className="case-row" onClick={onOpen}>
       <span className="case-row-id">CASE<br /><strong>{project.id}</strong></span>
-      {project.gallery?.[3] && <img className="case-row-thumb" src={project.gallery[3].src} alt="" loading="lazy" />}
+      {project.gallery?.length > 0 && <img className="case-row-thumb" src={(project.gallery[3] || project.gallery[0]).src} alt="" loading="eager" />}
       <span className="case-row-main"><span className="case-row-title">{project.title}<span className={`draft-tag${project.state === "Selected" ? " is-selected" : ""}`}><i />{project.state}</span></span><span className="case-row-description">{project.description}</span></span>
       <span className="case-row-meta"><span>{project.role}</span><span>{project.context || project.year}</span></span>
       <span className="case-row-action" aria-hidden="true"><ArrowRight size={17} /></span>
