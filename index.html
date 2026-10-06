@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f2">
+  <meta name="description" content="MaiPortfolio - a home for the things Mai is making, learning, and sharing.">
+  <title>MaiPortfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17241e;
+      --muted: #66736c;
+      --paper: #f5f7f2;
+      --green: #cafa53;
+      --line: #dce3db;
+      --coral: #ec684f;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; }
+    a { color: inherit; }
+
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+
+    .topbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      font: 700 20px/1 "Space Grotesk", sans-serif;
+      text-decoration: none;
+    }
+
+    .wordmark span { color: var(--coral); }
+
+    nav { display: flex; gap: 32px; }
+    nav a { font-size: 14px; text-decoration: none; }
+    nav a:hover, .text-link:hover { text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      align-items: center;
+      gap: clamp(40px, 8vw, 96px);
+      min-height: 590px;
+      padding-block: 64px 76px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--coral);
+      content: "";
+    }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      max-width: 620px;
+      margin-bottom: 22px;
+      font: 600 clamp(54px, 7.4vw, 92px)/.98 "Space Grotesk", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 440px;
+      margin-bottom: 32px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      min-height: 48px;
+      padding: 0 18px;
+      background: var(--green);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .pill-link:hover { background: #b9ed38; transform: translateY(-2px); }
+    .pill-link span { font-size: 18px; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 410px;
+      isolation: isolate;
+    }
+
+    .hero-visual::before {
+      position: absolute;
+      z-index: -1;
+      top: 20px;
+      right: -16px;
+      width: 76%;
+      height: 88%;
+      background: var(--green);
+      content: "";
+    }
+
+    .hero-visual img {
+      display: block;
+      width: 88%;
+      height: 390px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .image-note {
+      position: absolute;
+      right: 0;
+      bottom: 6px;
+      width: 190px;
+      padding: 17px 18px;
+      background: var(--ink);
+      color: white;
+      font: 500 14px/1.4 "Space Grotesk", sans-serif;
+    }
+
+    .image-note span { display: block; margin-bottom: 8px; color: var(--green); font-size: 11px; }
+
+    .section { border-top: 1px solid var(--line); padding-block: 70px; }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    h2 { margin-bottom: 0; font: 600 34px/1.1 "Space Grotesk", sans-serif; }
+    .section-index { color: var(--muted); font-size: 13px; }
+
+    .work-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      min-height: 100px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .work-row p { margin: 0; color: var(--muted); line-height: 1.6; }
+    .work-row strong { display: block; margin-bottom: 4px; color: var(--ink); font: 600 18px "Space Grotesk", sans-serif; }
+    .work-mark { display: grid; width: 42px; aspect-ratio: 1; place-items: center; background: var(--coral); color: white; font-size: 20px; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-grid p { max-width: 500px; margin-bottom: 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
+
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      margin-top: 68px;
+      padding: 28px;
+      background: var(--ink);
+      color: white;
+    }
+
+    .contact p { margin: 0; color: #c6d0c9; font-size: 14px; }
+    .contact h2 { margin-bottom: 8px; font-size: 26px; }
+    .text-link { color: var(--green); font-size: 14px; font-weight: 700; text-underline-offset: 4px; }
+
+    footer { padding-block: 24px; color: var(--muted); font-size: 12px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 36px, 540px); }
+      .topbar { min-height: 68px; }
+      nav { gap: 18px; }
+      nav a { font-size: 13px; }
+      .hero { grid-template-columns: 1fr; gap: 38px; min-height: auto; padding-block: 58px 54px; }
+      h1 { font-size: clamp(54px, 13vw, 76px); }
+      .intro { font-size: 16px; }
+      .hero-visual { min-height: 330px; }
+      .hero-visual img { width: 90%; height: 310px; }
+      .hero-visual::before { right: 0; height: 88%; }
+      .image-note { right: 0; bottom: 0; width: 168px; }
+      .section { padding-block: 52px; }
+      .about-grid { grid-template-columns: 1fr; gap: 18px; }
+      .contact { align-items: flex-start; flex-direction: column; margin-top: 48px; padding: 24px; }
+    }
+
+    @media (max-width: 390px) {
+      .wrap { width: calc(100% - 28px); }
+      nav { gap: 12px; }
+      nav a { font-size: 12px; }
+      .wordmark { font-size: 18px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar wrap">
+    <a class="wordmark" href="#home" aria-label="MaiPortfolio home">Mai<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero wrap" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Personal portfolio</p>
+        <h1 id="page-title">MaiPortfolio</h1>
+        <p class="intro">A little space for the things I make, the ideas I explore, and what I learn along the way.</p>
+        <a class="pill-link" href="#work">Take a look <span aria-hidden="true">&#8595;</span></a>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="A bright creative workspace with a laptop and desk" fetchpriority="high">
+        <div class="image-note"><span>01 / HELLO</span>A work in progress, in the best way.</div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <h2 id="work-title">A few things</h2>
+        <span class="section-index">01 / Work</span>
+      </div>
+      <div class="work-row">
+        <p><strong>More coming soon</strong>This space is ready for projects and ideas as they take shape.</p>
+        <span class="work-mark" aria-hidden="true">+</span>
+      </div>
+    </section>
+
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div class="section-heading">
+          <h2 id="about-title">A bit about me</h2>
+          <span class="section-index">02 / About</span>
+        </div>
+        <p>This is my corner of the internet: a place to share selected work, follow curious ideas, and keep track of what I am learning. I am just getting started, so check back as it grows.</p>
+      </div>
+      <div class="contact" id="contact">
+        <div>
+          <h2>Say hello.</h2>
+          <p>Find me and follow along on GitHub.</p>
+        </div>
+        <a class="text-link" href="https://github.com/bezalel59" target="_blank" rel="noreferrer">Visit my GitHub <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>MaiPortfolio</span><span>Made with curiosity.</span></div>
+  </footer>
+</body>
+</html>
