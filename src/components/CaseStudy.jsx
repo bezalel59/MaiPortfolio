@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 function ImageGallery({ project, onBack }) {
   return (
-    <article className={`case-study image-case-study${project.direction === "rtl" ? " is-rtl" : ""}`} dir={project.direction || "ltr"}>
+    <article className={`case-study image-case-study${project.direction === "rtl" ? " is-rtl" : ""}${project.pageWidth ? " is-page-case" : ""}`} dir={project.direction || "ltr"} style={project.pageWidth ? { "--page-width": `${project.pageWidth}px` } : undefined}>
       <button className="back-link" onClick={onBack}><ArrowLeft size={15} aria-hidden="true" /> All work</button>
       <header className="gallery-heading">
         <div className="case-kicker"><span>CASE {project.id}</span><span>{project.context}</span></div>

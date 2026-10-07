@@ -30,5 +30,6 @@ for (const assetPath of [scriptPath, stylePath]) {
 }
 
 await readFile(path.join(projectsPath, "diyukan", "figma-08.webp"));
+await readFile(path.join(projectsPath, "tripmate", "figma-10.webp"));
 
 console.log("Published the built site to the repository root for branch-based GitHub Pages.");
