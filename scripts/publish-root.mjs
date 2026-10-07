@@ -16,4 +16,19 @@ const projectsPath = path.join(projectRoot, "projects");
 await mkdir(projectsPath, { recursive: true });
 await cp(path.join(distPath, "projects"), projectsPath, { recursive: true, force: true });
 
+const rootHtml = await readFile(path.join(projectRoot, "index.html"), "utf8");
+const scriptPath = rootHtml.match(/<script[^>]+src="([^"]+)"/)?.[1];
+const stylePath = rootHtml.match(/<link[^>]+href="([^"]+\.css)"/)?.[1];
+
+if (!scriptPath || !stylePath || /src\/main\.jsx/.test(rootHtml)) {
+	throw new Error("Root index.html is not a compiled Pages entry point.");
+}
+
+for (const assetPath of [scriptPath, stylePath]) {
+	const localAssetPath = path.resolve(projectRoot, assetPath.replace(/^\.\//, ""));
+	await readFile(localAssetPath);
+}
+
+await readFile(path.join(projectsPath, "diyukan", "06-user-flow-and-wireframes.png"));
+
 console.log("Published the built site to the repository root for branch-based GitHub Pages.");

@@ -16,7 +16,7 @@ npm run build
 npm run preview
 ```
 
-The production site is written to `dist/`. Vite uses relative asset paths, so the build works from a GitHub Pages project URL even if the repository name changes. `npm run build` also copies the compiled HTML, JavaScript, CSS, and project artwork to the repository root. This keeps the current **Deploy from a branch → `main` / root** GitHub Pages setting working without serving unbuilt JSX. Commit and push the generated root `index.html`, `assets/`, and `projects/` after building.
+The production site is written to `dist/`. Vite uses relative asset paths, so the build works from a GitHub Pages project URL even if the repository name changes. `npm run build` also copies the compiled HTML, JavaScript, CSS, and project artwork to the repository root. This keeps the current **Deploy from a branch → `main` / root** GitHub Pages setting working without serving unbuilt JSX. Commit and push the generated root `index.html`, `assets/`, and `projects/` after building. The build now verifies those files and fails if the root HTML points to raw React source.
 
 The included `.github/workflows/pages.yml` can also deploy `dist/` using GitHub Actions. If you later change **Settings → Pages → Build and deployment → Source** to **GitHub Actions**, the workflow will publish the build artifact directly.
 
@@ -25,3 +25,5 @@ The included `.github/workflows/pages.yml` can also deploy `dist/` using GitHub 
 Update the `profile` object and `caseFiles` array in `src/data/portfolio.js`. Image case files use a `gallery` array; keep artwork in `public/projects/` and add each image's relative path and descriptive alt text there.
 
 The Mamali project currently contains six locally stored image boards from the linked Behance project. Add future projects to the same `caseFiles` array.
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the publishing checklist that prevents a blank branch-based Pages site.
