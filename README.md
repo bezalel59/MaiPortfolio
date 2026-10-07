@@ -16,7 +16,9 @@ npm run build
 npm run preview
 ```
 
-The production site is written to `dist/`. Vite uses relative asset paths, so the build works from a GitHub Pages project URL even if the repository name changes. The included `.github/workflows/pages.yml` builds and deploys the site whenever you push to `main`. In the repository, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** once.
+The production site is written to `dist/`. Vite uses relative asset paths, so the build works from a GitHub Pages project URL even if the repository name changes. `npm run build` also copies the compiled HTML, JavaScript, CSS, and project artwork to the repository root. This keeps the current **Deploy from a branch → `main` / root** GitHub Pages setting working without serving unbuilt JSX. Commit and push the generated root `index.html`, `assets/`, and `projects/` after building.
+
+The included `.github/workflows/pages.yml` can also deploy `dist/` using GitHub Actions. If you later change **Settings → Pages → Build and deployment → Source** to **GitHub Actions**, the workflow will publish the build artifact directly.
 
 ## Edit portfolio content
 

@@ -49,6 +49,7 @@ export const caseFiles = [
       { src: "./projects/diyukan/01-project-intro.png", width: 780, height: 640, alt: "דיוכאן app introduction with an augmented-reality tattoo preview on a phone" },
       { src: "./projects/diyukan/02-research-insights.png", width: 780, height: 640, alt: "Hebrew research insight board highlighting trust as a key factor in choosing a tattoo artist" },
       { src: "./projects/diyukan/03-user-needs-and-gallery.png", width: 780, height: 640, alt: "Hebrew user goals beside tattoo artist profile, tattoo browsing, and augmented-reality try-on screens" },
+      { src: "./projects/diyukan/04-tattoo-browsing-screens.png", width: 780, height: 640, alt: "Tattoo discovery app screens showing tattoo browsing, artist profiles, and augmented-reality try-on" },
       { src: "./projects/diyukan/05-artist-search-and-contact.png", width: 780, height: 640, alt: "Artist discovery list, local artist availability, and direct messaging screens" },
       { src: "./projects/diyukan/06-user-flow-and-wireframes.png", width: 780, height: 640, alt: "Tattoo appointment user-flow diagram with calendar and early booking wireframes" },
     ],
