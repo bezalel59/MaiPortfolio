@@ -29,6 +29,6 @@ for (const assetPath of [scriptPath, stylePath]) {
 	await readFile(localAssetPath);
 }
 
-await readFile(path.join(projectsPath, "diyukan", "06-user-flow-and-wireframes.png"));
+await readFile(path.join(projectsPath, "diyukan", "figma-08.webp"));
 
 console.log("Published the built site to the repository root for branch-based GitHub Pages.");

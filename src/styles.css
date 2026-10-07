@@ -201,7 +201,7 @@ kbd { display: inline-flex; min-height: 19px; align-items: center; justify-conte
 .case-bottom button { display: flex; align-items: center; gap: 7px; padding: 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; font: 10px "DM Sans", sans-serif; }
 
 .image-case-study { max-width: 1080px; }
-.image-case-study.is-rtl { max-width: 1320px; }
+.image-case-study.is-rtl { max-width: 1080px; }
 .gallery-heading { padding: 24px 0 21px; border-bottom: 1px solid var(--border-strong); }
 .gallery-heading h1 { margin: 12px 0 7px; font: 500 clamp(31px, 4.4vw, 46px)/1.12 var(--display); }
 .gallery-heading .case-kicker { gap: 13px; }
@@ -221,6 +221,8 @@ kbd { display: inline-flex; min-height: 19px; align-items: center; justify-conte
 .gallery-counter i { width: 30px; height: 1px; background: var(--border-strong); }
 .gallery-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); background: #fff; }
 .artwork-gallery.is-board-grid .gallery-figure img { border: 0; }
+.artwork-gallery.is-page { display: block; gap: 0; max-width: 1034px; margin: 19px auto 0; padding-top: 0; border: 1px solid var(--border); background: #fff; line-height: 0; }
+.artwork-gallery.is-page .gallery-figure img { border: 0; }
 .gallery-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 20px; padding-top: 13px; border-top: 1px solid var(--border); color: var(--muted); font: 8px var(--mono); }
 .gallery-footer button { display: inline-flex; align-items: center; gap: 6px; padding: 3px 0; border: 0; background: transparent; color: var(--ink); cursor: pointer; font: 10px "DM Sans", sans-serif; }
 
